@@ -34,6 +34,7 @@ fi
 
 # Build
 echo "📦 Building production..."
+npm install
 
 npm run build
 
