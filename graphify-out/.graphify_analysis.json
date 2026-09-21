@@ -1,0 +1,524 @@
+{
+  "communities": {
+    "0": [
+      "agent_skills_scripts_run_evals",
+      "agent_skills_scripts_run_evals_buildcorpus",
+      "agent_skills_scripts_run_evals_cases_dir",
+      "agent_skills_scripts_run_evals_cleargradingslot",
+      "agent_skills_scripts_run_evals_cosine",
+      "agent_skills_scripts_run_evals_eval_kinds",
+      "agent_skills_scripts_run_evals_execfilesync",
+      "agent_skills_scripts_run_evals_extractexecutormodel",
+      "agent_skills_scripts_run_evals_fixtures_dir",
+      "agent_skills_scripts_run_evals_fs",
+      "agent_skills_scripts_run_evals_loadcases",
+      "agent_skills_scripts_run_evals_loadskills",
+      "agent_skills_scripts_run_evals_main",
+      "agent_skills_scripts_run_evals_materializeworkspace",
+      "agent_skills_scripts_run_evals_os",
+      "agent_skills_scripts_run_evals_parsegrading",
+      "agent_skills_scripts_run_evals_path",
+      "agent_skills_scripts_run_evals_persistgradingoutcome",
+      "agent_skills_scripts_run_evals_rankskills",
+      "agent_skills_scripts_run_evals_resolvefixturepath",
+      "agent_skills_scripts_run_evals_results_dir",
+      "agent_skills_scripts_run_evals_root",
+      "agent_skills_scripts_run_evals_runbehavioral",
+      "agent_skills_scripts_run_evals_rundeterministic",
+      "agent_skills_scripts_run_evals_skills_dir",
+      "agent_skills_scripts_run_evals_stem",
+      "agent_skills_scripts_run_evals_stop",
+      "agent_skills_scripts_run_evals_termfreq",
+      "agent_skills_scripts_run_evals_test",
+      "agent_skills_scripts_run_evals_test_assert",
+      "agent_skills_scripts_run_evals_test_behavioraleval",
+      "agent_skills_scripts_run_evals_test_completecase",
+      "agent_skills_scripts_run_evals_test_fs",
+      "agent_skills_scripts_run_evals_test_makesandbox",
+      "agent_skills_scripts_run_evals_test_materializeworkspace_parsegrading_cleargradingslot_persistgradingoutcome_extractexecutormodel",
+      "agent_skills_scripts_run_evals_test_os",
+      "agent_skills_scripts_run_evals_test_path",
+      "agent_skills_scripts_run_evals_test_run",
+      "agent_skills_scripts_run_evals_test_runner",
+      "agent_skills_scripts_run_evals_test_spawnsync",
+      "agent_skills_scripts_run_evals_test_test",
+      "agent_skills_scripts_run_evals_test_writejson",
+      "agent_skills_scripts_run_evals_test_writeskill",
+      "agent_skills_scripts_run_evals_tokenize",
+      "agent_skills_scripts_run_evals_vec",
+      "ref_child_process",
+      "ref_os"
+    ],
+    "1": [
+      "agent_skills_evals_fixtures_ci_cd_and_automation_src_slug",
+      "agent_skills_evals_fixtures_ci_cd_and_automation_src_slug_slugify",
+      "agent_skills_evals_fixtures_ci_cd_and_automation_test_slug_test",
+      "agent_skills_evals_fixtures_ci_cd_and_automation_test_slug_test_assert",
+      "agent_skills_evals_fixtures_ci_cd_and_automation_test_slug_test_slugify",
+      "agent_skills_evals_fixtures_ci_cd_and_automation_test_slug_test_test",
+      "agent_skills_evals_fixtures_code_simplification_config_parser",
+      "agent_skills_evals_fixtures_code_simplification_config_parser_parseconfig",
+      "agent_skills_evals_fixtures_code_simplification_config_parser_test",
+      "agent_skills_evals_fixtures_code_simplification_config_parser_test_assert",
+      "agent_skills_evals_fixtures_code_simplification_config_parser_test_parseconfig",
+      "agent_skills_evals_fixtures_code_simplification_config_parser_test_test",
+      "agent_skills_evals_fixtures_debugging_and_error_recovery_pagination",
+      "agent_skills_evals_fixtures_debugging_and_error_recovery_pagination_paginate",
+      "agent_skills_evals_fixtures_debugging_and_error_recovery_pagination_test",
+      "agent_skills_evals_fixtures_debugging_and_error_recovery_pagination_test_assert",
+      "agent_skills_evals_fixtures_debugging_and_error_recovery_pagination_test_paginate",
+      "agent_skills_evals_fixtures_debugging_and_error_recovery_pagination_test_test",
+      "agent_skills_evals_fixtures_git_workflow_and_versioning_app",
+      "agent_skills_evals_fixtures_git_workflow_and_versioning_app_test",
+      "agent_skills_evals_fixtures_git_workflow_and_versioning_app_test_assert",
+      "agent_skills_evals_fixtures_git_workflow_and_versioning_app_test_test",
+      "agent_skills_evals_fixtures_git_workflow_and_versioning_app_test_total",
+      "agent_skills_evals_fixtures_git_workflow_and_versioning_app_total",
+      "agent_skills_evals_fixtures_security_and_hardening_webhook",
+      "agent_skills_evals_fixtures_security_and_hardening_webhook_previewwebhook",
+      "agent_skills_evals_fixtures_security_and_hardening_webhook_test",
+      "agent_skills_evals_fixtures_security_and_hardening_webhook_test_assert",
+      "agent_skills_evals_fixtures_security_and_hardening_webhook_test_previewwebhook",
+      "agent_skills_evals_fixtures_security_and_hardening_webhook_test_test",
+      "agent_skills_evals_fixtures_test_driven_development_src_split",
+      "agent_skills_evals_fixtures_test_driven_development_src_split_splitcents",
+      "agent_skills_evals_fixtures_test_driven_development_test_split_test",
+      "agent_skills_evals_fixtures_test_driven_development_test_split_test_assert",
+      "agent_skills_evals_fixtures_test_driven_development_test_split_test_splitcents",
+      "agent_skills_evals_fixtures_test_driven_development_test_split_test_test",
+      "agent_skills_scripts_validate_versions_test",
+      "agent_skills_scripts_validate_versions_test_assert",
+      "agent_skills_scripts_validate_versions_test_execfilesync",
+      "agent_skills_scripts_validate_versions_test_manifestpaths",
+      "agent_skills_scripts_validate_versions_test_readfilesync",
+      "agent_skills_scripts_validate_versions_test_readmanifestversion",
+      "agent_skills_scripts_validate_versions_test_test",
+      "ref_node_assert",
+      "ref_node_test"
+    ],
+    "2": [
+      "agent_skills_scripts_lib_skill_lint",
+      "agent_skills_scripts_lib_skill_lint_extractskillreferences",
+      "agent_skills_scripts_lib_skill_lint_fs",
+      "agent_skills_scripts_lib_skill_lint_lintskill",
+      "agent_skills_scripts_lib_skill_lint_lintskillcontent",
+      "agent_skills_scripts_lib_skill_lint_parsefrontmatter",
+      "agent_skills_scripts_lib_skill_lint_path",
+      "agent_skills_scripts_lib_skill_lint_required_sections",
+      "agent_skills_scripts_lib_skill_lint_section_exempt_skills",
+      "agent_skills_scripts_lib_skill_lint_skill_ref_patterns",
+      "agent_skills_scripts_lib_skill_lint_stripfencedcodeblocks",
+      "agent_skills_scripts_lib_skill_lint_test",
+      "agent_skills_scripts_lib_skill_lint_test_assert",
+      "agent_skills_scripts_lib_skill_lint_test_fence_known",
+      "agent_skills_scripts_lib_skill_lint_test_known",
+      "agent_skills_scripts_lib_skill_lint_test_lintskillcontent",
+      "agent_skills_scripts_lib_skill_lint_test_overviewmissing",
+      "agent_skills_scripts_lib_skill_lint_test_skillwithoverview",
+      "agent_skills_scripts_lib_skill_lint_test_test",
+      "agent_skills_scripts_lib_skill_lint_test_valid_frontmatter",
+      "agent_skills_scripts_lib_skill_lint_test_withallsections",
+      "agent_skills_scripts_validate_artifact_paths",
+      "agent_skills_scripts_validate_artifact_paths_artifact_allowlist",
+      "agent_skills_scripts_validate_artifact_paths_findviolations",
+      "agent_skills_scripts_validate_artifact_paths_fs",
+      "agent_skills_scripts_validate_artifact_paths_guarded_files",
+      "agent_skills_scripts_validate_artifact_paths_main",
+      "agent_skills_scripts_validate_artifact_paths_path",
+      "agent_skills_scripts_validate_artifact_paths_root",
+      "agent_skills_scripts_validate_reference_links",
+      "agent_skills_scripts_validate_reference_links_findviolations",
+      "agent_skills_scripts_validate_reference_links_fs",
+      "agent_skills_scripts_validate_reference_links_main",
+      "agent_skills_scripts_validate_reference_links_path",
+      "agent_skills_scripts_validate_reference_links_root",
+      "agent_skills_scripts_validate_reference_links_skills_dir",
+      "agent_skills_scripts_validate_reference_links_stripfencedcodeblocks",
+      "agent_skills_scripts_validate_skills",
+      "agent_skills_scripts_validate_skills_fs",
+      "agent_skills_scripts_validate_skills_lintskill",
+      "agent_skills_scripts_validate_skills_main",
+      "agent_skills_scripts_validate_skills_path",
+      "agent_skills_scripts_validate_skills_skills_dir",
+      "ref_fs",
+      "ref_path"
+    ],
+    "3": [
+      "astro_config",
+      "package",
+      "package_allowscripts",
+      "package_allowscripts_esbuild",
+      "package_dependencies",
+      "package_dependencies_astro",
+      "package_dependencies_astrojs_starlight",
+      "package_dependencies_sharp",
+      "package_name",
+      "package_scripts",
+      "package_scripts_astro",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_preview",
+      "package_scripts_start",
+      "package_type",
+      "package_version",
+      "ref_astro",
+      "ref_astro_content",
+      "ref_astrojs_starlight",
+      "ref_sharp",
+      "src_content_config",
+      "src_content_config_collections"
+    ],
+    "4": [
+      "agent_skills_scripts_validate_commands_test",
+      "agent_skills_scripts_validate_commands_test_aftereach_test",
+      "agent_skills_scripts_validate_commands_test_assert",
+      "agent_skills_scripts_validate_commands_test_fs",
+      "agent_skills_scripts_validate_commands_test_makesandbox",
+      "agent_skills_scripts_validate_commands_test_os",
+      "agent_skills_scripts_validate_commands_test_path",
+      "agent_skills_scripts_validate_commands_test_run",
+      "agent_skills_scripts_validate_commands_test_sandboxes",
+      "agent_skills_scripts_validate_commands_test_spawnsync",
+      "agent_skills_scripts_validate_commands_test_validator",
+      "agent_skills_scripts_validate_commands_test_writeclaudecommand",
+      "agent_skills_scripts_validate_commands_test_writefile",
+      "agent_skills_scripts_validate_commands_test_writematchingcommands",
+      "agent_skills_scripts_validate_commands_test_writetomlcommand"
+    ],
+    "5": [
+      "agent_skills_scripts_validate_artifact_paths_test",
+      "agent_skills_scripts_validate_artifact_paths_test_aftereach_test",
+      "agent_skills_scripts_validate_artifact_paths_test_assert",
+      "agent_skills_scripts_validate_artifact_paths_test_fs",
+      "agent_skills_scripts_validate_artifact_paths_test_makesandbox",
+      "agent_skills_scripts_validate_artifact_paths_test_os",
+      "agent_skills_scripts_validate_artifact_paths_test_path",
+      "agent_skills_scripts_validate_artifact_paths_test_run",
+      "agent_skills_scripts_validate_artifact_paths_test_sandboxes",
+      "agent_skills_scripts_validate_artifact_paths_test_spawnsync",
+      "agent_skills_scripts_validate_artifact_paths_test_validator",
+      "agent_skills_scripts_validate_artifact_paths_test_writefile",
+      "ref_node_os"
+    ],
+    "6": [
+      "agent_skills_scripts_validate_reference_links_test",
+      "agent_skills_scripts_validate_reference_links_test_aftereach_test",
+      "agent_skills_scripts_validate_reference_links_test_assert",
+      "agent_skills_scripts_validate_reference_links_test_fs",
+      "agent_skills_scripts_validate_reference_links_test_makesandbox",
+      "agent_skills_scripts_validate_reference_links_test_os",
+      "agent_skills_scripts_validate_reference_links_test_path",
+      "agent_skills_scripts_validate_reference_links_test_run",
+      "agent_skills_scripts_validate_reference_links_test_sandboxes",
+      "agent_skills_scripts_validate_reference_links_test_spawnsync",
+      "agent_skills_scripts_validate_reference_links_test_validator",
+      "agent_skills_scripts_validate_reference_links_test_writefile"
+    ],
+    "7": [
+      "agent_skills_scripts_validate_commands",
+      "agent_skills_scripts_validate_commands_descriptionfrommd",
+      "agent_skills_scripts_validate_commands_descriptionfromtoml",
+      "agent_skills_scripts_validate_commands_dirs",
+      "agent_skills_scripts_validate_commands_fs",
+      "agent_skills_scripts_validate_commands_loadcommands",
+      "agent_skills_scripts_validate_commands_main",
+      "agent_skills_scripts_validate_commands_name_map",
+      "agent_skills_scripts_validate_commands_name_map_reverse",
+      "agent_skills_scripts_validate_commands_path",
+      "agent_skills_scripts_validate_commands_root"
+    ],
+    "8": [
+      "agent_skills_evals_fixtures_test_driven_development_ecosystem_ledger",
+      "agent_skills_evals_fixtures_test_driven_development_ecosystem_ledger_apply_entries",
+      "agent_skills_evals_fixtures_test_driven_development_ecosystem_ledger_rationale_1",
+      "agent_skills_evals_fixtures_test_driven_development_ecosystem_ledger_rationale_5",
+      "agent_skills_evals_fixtures_test_driven_development_ecosystem_test_ledger",
+      "agent_skills_evals_fixtures_test_driven_development_ecosystem_test_ledger_applyentriestest",
+      "agent_skills_evals_fixtures_test_driven_development_ecosystem_test_ledger_applyentriestest_test_applies_a_single_credit",
+      "agent_skills_evals_fixtures_test_driven_development_ecosystem_test_ledger_applyentriestest_test_applies_multiple_credits_in_order",
+      "agent_skills_evals_fixtures_test_driven_development_ecosystem_test_ledger_applyentriestest_test_rejects_unknown_entry_kinds",
+      "unittest"
+    ],
+    "9": [
+      "agent_skills_hooks_simplify_ignore_test",
+      "agent_skills_hooks_simplify_ignore_test_assert_eq",
+      "agent_skills_hooks_simplify_ignore_test_block_hash",
+      "agent_skills_hooks_simplify_ignore_test_cache",
+      "agent_skills_hooks_simplify_ignore_test_escape_glob",
+      "agent_skills_hooks_simplify_ignore_test_file_id",
+      "agent_skills_hooks_simplify_ignore_test_hash_cmd",
+      "agent_skills_hooks_simplify_ignore_test_hook_event",
+      "agent_skills_hooks_simplify_ignore_test_rt_hook_event",
+      "agent_skills_hooks_simplify_ignore_test_sh__entry"
+    ],
+    "10": [
+      "agent_skills_evals_fixtures_performance_optimization_benchmark",
+      "agent_skills_evals_fixtures_performance_optimization_benchmark_output",
+      "agent_skills_evals_fixtures_performance_optimization_benchmark_performance",
+      "agent_skills_evals_fixtures_performance_optimization_benchmark_products",
+      "agent_skills_evals_fixtures_performance_optimization_benchmark_renderproducts",
+      "agent_skills_evals_fixtures_performance_optimization_benchmark_start",
+      "agent_skills_evals_fixtures_performance_optimization_products",
+      "agent_skills_evals_fixtures_performance_optimization_products_renderproducts",
+      "ref_node_perf_hooks"
+    ],
+    "11": [
+      "agent_skills_hooks_simplify_ignore",
+      "agent_skills_hooks_simplify_ignore_block_hash",
+      "agent_skills_hooks_simplify_ignore_escape_glob",
+      "agent_skills_hooks_simplify_ignore_expand_file",
+      "agent_skills_hooks_simplify_ignore_file_id",
+      "agent_skills_hooks_simplify_ignore_filter_file",
+      "agent_skills_hooks_simplify_ignore_has_placeholders",
+      "agent_skills_hooks_simplify_ignore_hash_cmd",
+      "agent_skills_hooks_simplify_ignore_sh__entry"
+    ],
+    "12": [
+      "agent_skills_claude_plugin_marketplace",
+      "agent_skills_claude_plugin_marketplace_description",
+      "agent_skills_claude_plugin_marketplace_name",
+      "agent_skills_claude_plugin_marketplace_owner",
+      "agent_skills_claude_plugin_marketplace_owner_name",
+      "agent_skills_claude_plugin_marketplace_owner_url",
+      "agent_skills_claude_plugin_marketplace_plugins",
+      "agent_skills_claude_plugin_marketplace_schema"
+    ],
+    "13": [
+      "agent_skills_hooks_sdd_cache_test",
+      "agent_skills_hooks_sdd_cache_test_assert_eq",
+      "agent_skills_hooks_sdd_cache_test_hash_key",
+      "agent_skills_hooks_sdd_cache_test_post_input",
+      "agent_skills_hooks_sdd_cache_test_pre_input",
+      "agent_skills_hooks_sdd_cache_test_run_hook",
+      "agent_skills_hooks_sdd_cache_test_seed_entry",
+      "agent_skills_hooks_sdd_cache_test_sh__entry"
+    ],
+    "14": [
+      "agent_skills_evals_fixtures_browser_testing_with_devtools_server",
+      "agent_skills_evals_fixtures_browser_testing_with_devtools_server_fs",
+      "agent_skills_evals_fixtures_browser_testing_with_devtools_server_http",
+      "agent_skills_evals_fixtures_browser_testing_with_devtools_server_path",
+      "ref_node_fs",
+      "ref_node_http",
+      "ref_node_path"
+    ],
+    "15": [
+      "agent_skills_evals_fixtures_test_driven_development_package",
+      "agent_skills_evals_fixtures_test_driven_development_package_description",
+      "agent_skills_evals_fixtures_test_driven_development_package_name",
+      "agent_skills_evals_fixtures_test_driven_development_package_private",
+      "agent_skills_evals_fixtures_test_driven_development_package_scripts",
+      "agent_skills_evals_fixtures_test_driven_development_package_scripts_test",
+      "agent_skills_evals_fixtures_test_driven_development_package_version"
+    ],
+    "16": [
+      "agent_skills_scripts_validate_versions",
+      "agent_skills_scripts_validate_versions_execfilesync",
+      "agent_skills_scripts_validate_versions_expectedversion",
+      "agent_skills_scripts_validate_versions_manifestpaths",
+      "agent_skills_scripts_validate_versions_readfilesync",
+      "agent_skills_scripts_validate_versions_readmanifestversion",
+      "ref_node_child_process"
+    ],
+    "17": [
+      "agent_skills_evals_fixtures_ci_cd_and_automation_package",
+      "agent_skills_evals_fixtures_ci_cd_and_automation_package_name",
+      "agent_skills_evals_fixtures_ci_cd_and_automation_package_private",
+      "agent_skills_evals_fixtures_ci_cd_and_automation_package_scripts",
+      "agent_skills_evals_fixtures_ci_cd_and_automation_package_scripts_lint",
+      "agent_skills_evals_fixtures_ci_cd_and_automation_package_scripts_test"
+    ],
+    "18": [
+      "agent_skills_evals_fixtures_incremental_implementation_reports",
+      "agent_skills_evals_fixtures_incremental_implementation_reports_test",
+      "agent_skills_evals_fixtures_incremental_implementation_reports_test_assert",
+      "agent_skills_evals_fixtures_incremental_implementation_reports_test_test",
+      "agent_skills_evals_fixtures_incremental_implementation_reports_test_visiblereports",
+      "agent_skills_evals_fixtures_incremental_implementation_reports_visiblereports"
+    ],
+    "19": [
+      "agent_skills_hooks_sdd_cache_post",
+      "agent_skills_hooks_sdd_cache_post_dbg",
+      "agent_skills_hooks_sdd_cache_post_extract_header",
+      "agent_skills_hooks_sdd_cache_post_hash_key",
+      "agent_skills_hooks_sdd_cache_post_sh__entry"
+    ],
+    "20": [
+      "ref_astro_tsconfigs_strict",
+      "tsconfig",
+      "tsconfig_exclude",
+      "tsconfig_extends",
+      "tsconfig_include"
+    ],
+    "21": [
+      "agent_skills_hooks_sdd_cache_pre",
+      "agent_skills_hooks_sdd_cache_pre_dbg",
+      "agent_skills_hooks_sdd_cache_pre_hash_key",
+      "agent_skills_hooks_sdd_cache_pre_sh__entry"
+    ],
+    "22": [
+      "agent_skills_evals_fixtures_frontend_ui_engineering_button",
+      "agent_skills_evals_fixtures_frontend_ui_engineering_button_button",
+      "ref_react"
+    ],
+    "23": [
+      "agents_skills_idea_refine_scripts_idea_refine_sh__entry",
+      "claude_skills_idea_refine_scripts_idea_refine",
+      "claude_skills_idea_refine_scripts_idea_refine_sh__entry"
+    ],
+    "24": [
+      "agent_skills_evals_fixtures_incremental_implementation_pressure_draft_export",
+      "agent_skills_evals_fixtures_incremental_implementation_pressure_draft_export_exportreports"
+    ],
+    "25": [
+      "agent_skills_evals_fixtures_observability_and_instrumentation_payment_retry",
+      "agent_skills_evals_fixtures_observability_and_instrumentation_payment_retry_retrypayment"
+    ],
+    "26": [
+      "agent_skills_hooks_session_start",
+      "agent_skills_hooks_session_start_sh__entry"
+    ],
+    "27": [
+      "agent_skills_hooks_session_start_test",
+      "agent_skills_hooks_session_start_test_sh__entry"
+    ],
+    "28": [
+      "agent_skills_skills_idea_refine_scripts_idea_refine",
+      "agent_skills_skills_idea_refine_scripts_idea_refine_sh__entry"
+    ]
+  },
+  "cohesion": {
+    "0": 0.06845513413506013,
+    "1": 0.05656565656565657,
+    "2": 0.06060606060606061,
+    "3": 0.09090909090909091,
+    "4": 0.17142857142857143,
+    "5": 0.15384615384615385,
+    "6": 0.16666666666666666,
+    "7": 0.23636363636363636,
+    "8": 0.28888888888888886,
+    "9": 0.3333333333333333,
+    "10": 0.25,
+    "11": 0.4444444444444444,
+    "12": 0.25,
+    "13": 0.39285714285714285,
+    "14": 0.2857142857142857,
+    "15": 0.2857142857142857,
+    "16": 0.2857142857142857,
+    "17": 0.3333333333333333,
+    "18": 0.4,
+    "19": 0.7,
+    "20": 0.4,
+    "21": 0.8333333333333334,
+    "22": 0.6666666666666666,
+    "23": 0.6666666666666666,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0
+  },
+  "gods": [
+    {
+      "id": "agent_skills_scripts_run_evals_rundeterministic",
+      "label": "runDeterministic()",
+      "degree": 9
+    },
+    {
+      "id": "agent_skills_scripts_run_evals_runbehavioral",
+      "label": "runBehavioral()",
+      "degree": 7
+    },
+    {
+      "id": "agent_skills_scripts_run_evals_rankskills",
+      "label": "rankSkills()",
+      "degree": 6
+    },
+    {
+      "id": "agent_skills_scripts_lib_skill_lint_lintskillcontent",
+      "label": "lintSkillContent()",
+      "degree": 6
+    },
+    {
+      "id": "agent_skills_evals_fixtures_test_driven_development_ecosystem_ledger_apply_entries",
+      "label": "apply_entries()",
+      "degree": 6
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 6
+    },
+    {
+      "id": "agent_skills_hooks_simplify_ignore_sh__entry",
+      "label": "simplify-ignore.sh script",
+      "degree": 5
+    },
+    {
+      "id": "agent_skills_hooks_sdd_cache_test_sh__entry",
+      "label": "sdd-cache-test.sh script",
+      "degree": 5
+    },
+    {
+      "id": "agent_skills_hooks_simplify_ignore_test_sh__entry",
+      "label": "simplify-ignore-test.sh script",
+      "degree": 5
+    },
+    {
+      "id": "agent_skills_evals_fixtures_test_driven_development_ecosystem_test_ledger_applyentriestest",
+      "label": "ApplyEntriesTest",
+      "degree": 4
+    }
+  ],
+  "surprises": [
+    {
+      "source": "main()",
+      "target": "lintSkill()",
+      "source_files": [
+        "agent-skills/scripts/validate-skills.js",
+        "agent-skills/scripts/lib/skill-lint.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "findViolations()",
+      "target": "stripFencedCodeBlocks()",
+      "source_files": [
+        "agent-skills/scripts/validate-reference-links.js",
+        "agent-skills/scripts/lib/skill-lint.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    }
+  ],
+  "questions": [
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `CASES_DIR`, `EVAL_KINDS`, `{ execFileSync }` to the rest of the system?",
+      "why": "152 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `run-evals.js` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.06845513413506013 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `ref_node_assert` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.05656565656565657 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `skill-lint.js` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.06060606060606061 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `package.json` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected."
+    }
+  ]
+}
