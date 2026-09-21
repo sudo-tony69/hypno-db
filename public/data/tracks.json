@@ -10,6 +10,7 @@
     "releaseDate": "2026-08-15",
     "audience": "General",
     "tags": ["Ambient", "Synthwave", "Chillout", "Mastered"],
+    "triggers": ["Blank", "Drop", "Empty", "Sleep"],
     "fileSize": "28.4 MB",
     "bitrate": "24-bit / 96 kHz",
     "bpm": "90 BPM",

@@ -1,0 +1,416 @@
+---
+// src/layouts/BaseLayout.astro
+import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'AudioDB Studio Master Database' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} — AudioDB</title>
+  <meta name="description" content={description} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <ClientRouter />
+
+  <style is:global>
+    :root {
+      --bg-dark: #05070a;
+      --bg-surface: #0b0f17;
+      --bg-card: #111723;
+      --bg-card-hover: #161e2e;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(99, 102, 241, 0.35);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --primary-glow: rgba(99, 102, 241, 0.25);
+      --accent-cyan: #06b6d4;
+      --accent-purple: #a855f7;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --transition-base: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.12) 0%, transparent 55%),
+        linear-gradient(to bottom, rgba(5, 7, 10, 0.85), #05070a);
+      background-attachment: fixed;
+      color: var(--text-main);
+      padding-bottom: 120px;
+      min-height: 100vh;
+    }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Nav Header */
+    header {
+      border-bottom: 1px solid var(--border-color);
+      background: rgba(5, 7, 10, 0.85);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--primary), var(--accent-purple));
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--text-main);
+    }
+
+    /* Track Grid Cards */
+    .track-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .track-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: var(--transition-base);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .track-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .artwork-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .artwork-img { width: 100%; height: 100%; object-fit: cover; }
+
+    .play-btn-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .track-card:hover .play-btn-overlay { opacity: 1; }
+
+    .play-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.2rem;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition-base);
+    }
+
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-secondary { background: rgba(255, 255, 255, 0.06); color: var(--text-main); border: 1px solid var(--border-color); }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.12); }
+
+    /* Persistent Audio Console */
+    .audio-player-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(11, 15, 23, 0.96);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid var(--border-glow);
+      z-index: 100;
+      padding: 0.75rem 1.5rem;
+    }
+
+    .player-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .player-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      width: 250px;
+    }
+
+    .player-thumb {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+    }
+
+    .player-center {
+      flex: 1;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .scrub-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      width: 100%;
+      font-size: 0.75rem;
+      font-family: monospace;
+      color: var(--text-dim);
+    }
+
+    .range-input {
+      -webkit-appearance: none;
+      appearance: none;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 9999px;
+      height: 6px;
+      outline: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .range-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav-wrapper">
+      <a href="/" class="brand">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+          </svg>
+        </div>
+        <span>AudioDB</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/files">All Files</a></li>
+          <li><a href="/artists">Artists</a></li>
+          <li><a href="/tags">Tags</a></li>
+          <li><a href="/triggers">Triggers</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <slot />
+
+  <!-- Global Persistent Audio Console Bar -->
+  <aside id="audio-player-bar" class="audio-player-bar" transition:persist="audio-player">
+    <div class="player-container">
+      <div class="player-left">
+        <img id="player-img" src="/favicon.svg" alt="Track artwork" class="player-thumb" />
+        <div style="overflow: hidden;">
+          <div id="player-title" style="font-weight: 700; font-size: 0.88rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">No track playing</div>
+          <div id="player-artist" style="font-size: 0.75rem; color: var(--accent-purple);">Select an audio file</div>
+        </div>
+      </div>
+
+      <div class="player-center">
+        <div style="display: flex; gap: 0.75rem; align-items: center;">
+          <button id="global-prev-btn" class="btn-secondary" style="padding: 0.4rem; border-radius: 50%;" aria-label="Previous">⏮</button>
+          <button id="global-play-btn" class="btn-primary" style="padding: 0.5rem 1.1rem; border-radius: 9999px;" aria-label="Play or Pause">▶ Play</button>
+          <button id="global-next-btn" class="btn-secondary" style="padding: 0.4rem; border-radius: 50%;" aria-label="Next">⏭</button>
+        </div>
+
+        <div class="scrub-row">
+          <span id="player-cur">0:00</span>
+          <input type="range" id="global-scrubber" class="range-input" min="0" max="100" value="0" step="0.1" />
+          <span id="player-dur">0:00</span>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 0.5rem; width: 150px;">
+        <span style="font-size: 0.75rem; color: var(--text-dim);">🔊</span>
+        <input type="range" id="global-volume" class="range-input" min="0" max="1" step="0.05" value="0.8" />
+      </div>
+    </div>
+  </aside>
+
+  <!-- Persistent Global Audio Element -->
+  <audio id="core-audio-engine" transition:persist="core-audio"></audio>
+
+  <!-- Global Audio Controller Script -->
+  <script is:inline>
+    (() => {
+      // Attached once across Astro View Transitions
+      if (window.__audioEngineInit) return;
+      window.__audioEngineInit = true;
+
+      const audio = document.getElementById('core-audio-engine');
+      const playBtn = document.getElementById('global-play-btn');
+      const scrubber = document.getElementById('global-scrubber');
+      const volume = document.getElementById('global-volume');
+      const cur = document.getElementById('player-cur');
+      const dur = document.getElementById('player-dur');
+      const title = document.getElementById('player-title');
+      const artist = document.getElementById('player-artist');
+      const img = document.getElementById('player-img');
+
+      function formatTime(s) {
+        if (!s || isNaN(s)) return '0:00';
+        const m = Math.floor(s / 60);
+        const rem = Math.floor(s % 60);
+        return `${m}:${rem < 10 ? '0' : ''}${rem}`;
+      }
+
+      window.playAudioTrack = function(data) {
+        if (audio.src !== data.url) {
+          audio.src = data.url;
+        }
+        title.textContent = data.title;
+        artist.textContent = data.artist;
+        img.src = data.artwork;
+        audio.play().catch(console.warn);
+      };
+
+      playBtn.addEventListener('click', () => {
+        if (audio.paused) {
+          if (audio.src) audio.play().catch(console.warn);
+        } else {
+          audio.pause();
+        }
+      });
+
+      audio.addEventListener('play', () => playBtn.textContent = '⏸ Pause');
+      audio.addEventListener('pause', () => playBtn.textContent = '▶ Play');
+
+      audio.addEventListener('timeupdate', () => {
+        if (audio.duration) {
+          scrubber.value = (audio.currentTime / audio.duration) * 100;
+          cur.textContent = formatTime(audio.currentTime);
+          dur.textContent = formatTime(audio.duration);
+        }
+      });
+
+      scrubber.addEventListener('input', () => {
+        if (audio.duration) audio.currentTime = (scrubber.value / 100) * audio.duration;
+      });
+
+      volume.addEventListener('input', () => {
+        audio.volume = parseFloat(volume.value);
+      });
+
+      // Handle custom clicks on play buttons on any page
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-play-url]');
+        if (btn) {
+          e.preventDefault();
+          window.playAudioTrack({
+            url: btn.dataset.playUrl,
+            title: btn.dataset.playTitle,
+            artist: btn.dataset.playArtist,
+            artwork: btn.dataset.playArtwork
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

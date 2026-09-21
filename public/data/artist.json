@@ -1,4 +1,5 @@
-{
+[
+  {
   "id": "aetheria",
   "name": "Aetheria",
   "genre": "Ambient / Electronic / Soundscapes",
@@ -10,4 +11,18 @@
     "spotify": "#",
     "bandcamp": "#"
   }
+}, 
+{
+  "id": "Eros",
+  "name": "Eros",
+  "genre": "Electric / Hypnotic / Soundscapes",
+  "bio": "Atmospheric soundscapes, cinematic ambient synthesis, and deep melodic waves. Creating sonic journeys for deep focus, meditation, and nocturnal exploration.",
+  "avatar": "./images/artists/aetheria-avatar.svg",
+  "banner": "./images/artists/aetheria-banner.svg",
+  "socials": {
+    "website": "https://aetheriamusic.example.com",
+    "spotify": "#",
+    "bandcamp": "#"
+  }
 }
+]

@@ -1,0 +1,105 @@
+---
+// src/pages/file/[slug].astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import tracksData from '../../../public/data/tracks.json';
+import { slugify } from '../../utils/audio';
+
+export async function getStaticPaths() {
+  return tracksData.map(track => ({
+    params: { slug: slugify(track.title) },
+    props: { track }
+  }));
+}
+
+const { track } = Astro.props;
+---
+
+<BaseLayout title={`${track.title} — File Details`}>
+  <main class="container" style="padding: 2.5rem 1.5rem;">
+    <!-- Breadcrumbs -->
+    <nav style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1.5rem;">
+      <a href="/" style="color: var(--text-muted); text-decoration: none;">Home</a> / 
+      <a href="/files" style="color: var(--text-muted); text-decoration: none;">Files</a> / 
+      <span style="color: var(--text-main); font-weight: 700;">{track.title}</span>
+    </nav>
+
+    <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; display: flex; flex-direction: column; gap: 2.5rem;">
+      <div style="display: flex; flex-direction: column; md:flex-row; gap: 2rem;">
+        
+        <!-- Artwork & Play Button -->
+        <div style="width: 280px; flex-shrink: 0; display: flex; flex-direction: column; gap: 1rem;">
+          <img src={track.artwork} alt={track.title} style="width: 280px; height: 280px; border-radius: var(--radius-md); object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.6);" />
+          
+          <button 
+            class="btn btn-primary" 
+            style="justify-content: center; font-size: 1rem; padding: 0.85rem;"
+            data-play-url={track.audioUrl} 
+            data-play-title={track.title} 
+            data-play-artist={track.artist}
+            data-play-artwork={track.artwork}
+          >
+            ▶ Play Master Audio
+          </button>
+
+          <a href={track.audioUrl} download class="btn btn-secondary" style="justify-content: center;">
+            📥 Download Audio File
+          </a>
+        </div>
+
+        <!-- Technical Metadata -->
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 1.5rem;">
+          <div>
+            <span style="font-family: monospace; font-size: 0.8rem; color: var(--accent-cyan); background: rgba(6, 182, 212, 0.1); padding: 3px 8px; border-radius: 4px;">ID #{track.id}</span>
+            <h1 style="font-size: 2.4rem; font-weight: 800; margin-top: 0.5rem;">{track.title}</h1>
+            <div style="font-size: 1.1rem; color: var(--accent-purple); font-weight: 600;">
+              Artist: <a href={`/artist/${track.artist}`} style="color: inherit; text-decoration: none;">{track.artist}</a>
+            </div>
+          </div>
+
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
+            <h2 style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.5rem;">Track Description</h2>
+            <p style="color: var(--text-muted); line-height: 1.6;">{track.description}</p>
+          </div>
+
+          <!-- Master Audio Specs Grid -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.75rem;">
+            <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 0.75rem; border-radius: var(--radius-sm);">
+              <span style="font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase;">Duration</span>
+              <div style="font-weight: 700; font-family: monospace;">{track.duration}</div>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 0.75rem; border-radius: var(--radius-sm);">
+              <span style="font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase;">Format</span>
+              <div style="font-weight: 700; font-family: monospace;">{track.format || 'WAV'}</div>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 0.75rem; border-radius: var(--radius-sm);">
+              <span style="font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase;">Sample Rate</span>
+              <div style="font-weight: 700; font-family: monospace;">{track.bitrate || '24-bit / 96kHz'}</div>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 0.75rem; border-radius: var(--radius-sm);">
+              <span style="font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase;">Tempo / BPM</span>
+              <div style="font-weight: 700; font-family: monospace;">{track.bpm || 'N/A'}</div>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 0.75rem; border-radius: var(--radius-sm);">
+              <span style="font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase;">Musical Key</span>
+              <div style="font-weight: 700; font-family: monospace;">{track.key || 'N/A'}</div>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 0.75rem; border-radius: var(--radius-sm);">
+              <span style="font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase;">File Size</span>
+              <div style="font-weight: 700; font-family: monospace;">{track.fileSize || 'N/A'}</div>
+            </div>
+          </div>
+
+          <!-- Tags -->
+          <div>
+            <span style="font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; margin-right: 0.5rem;">Tags:</span>
+            {track.tags?.map(tag => (
+              <a href={`/tag/${tag}`} class="btn btn-secondary" style="padding: 0.2rem 0.6rem; font-size: 0.75rem; margin-right: 0.4rem; text-decoration: none;">
+                #{tag}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
