@@ -60,8 +60,6 @@ echo "📂 Publishing build..."
 
 cp -R "$TEMP_DIR"/. "$REPO_ROOT/"
 
-touch "$REPO_ROOT/.nojekyll"
-
 # Commit
 echo "💾 Creating deployment commit..."
 
