@@ -19,7 +19,3 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
-
-# temporary scratch directory
-scratch/
-
