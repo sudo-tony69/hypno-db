@@ -1,28 +1,30 @@
 [
   {
-  "id": "aetheria",
-  "name": "Aetheria",
-  "genre": "Ambient / Electronic / Soundscapes",
-  "bio": "Atmospheric soundscapes, cinematic ambient synthesis, and deep melodic waves. Creating sonic journeys for deep focus, meditation, and nocturnal exploration.",
-  "avatar": "./images/artists/aetheria-avatar.svg",
-  "banner": "./images/artists/aetheria-banner.svg",
-  "socials": {
-    "website": "https://aetheriamusic.example.com",
-    "spotify": "#",
-    "bandcamp": "#"
+    "id": "aetheria",
+    "slug": "aetheria",
+    "name": "Aetheria",
+    "genre": "Ambient / Electronic / Soundscapes",
+    "bio": "Atmospheric soundscapes, cinematic ambient synthesis, and deep melodic waves. Creating sonic journeys for deep focus, meditation, and nocturnal exploration.",
+    "avatar": "/images/artists/aetheria-avatar.svg",
+    "banner": "/images/artists/aetheria-banner.svg",
+    "socials": {
+      "website": "https://aetheriamusic.example.com",
+      "spotify": "",
+      "bandcamp": ""
+    }
+  },
+  {
+    "id": "eros",
+    "slug": "eros",
+    "name": "Eros",
+    "genre": "Electric / Hypnotic / Soundscapes",
+    "bio": "Electric hypnosis, midnight motion, and immersive textures built for late-night movement and deep listening sessions.",
+    "avatar": "/images/artists/eros-avatar.svg",
+    "banner": "/images/artists/eros-banner.svg",
+    "socials": {
+      "website": "https://erosmusic.example.com",
+      "spotify": "",
+      "bandcamp": ""
+    }
   }
-}, 
-{
-  "id": "Eros",
-  "name": "Eros",
-  "genre": "Electric / Hypnotic / Soundscapes",
-  "bio": "Atmospheric soundscapes, cinematic ambient synthesis, and deep melodic waves. Creating sonic journeys for deep focus, meditation, and nocturnal exploration.",
-  "avatar": "./images/artists/aetheria-avatar.svg",
-  "banner": "./images/artists/aetheria-banner.svg",
-  "socials": {
-    "website": "https://aetheriamusic.example.com",
-    "spotify": "#",
-    "bandcamp": "#"
-  }
-}
 ]

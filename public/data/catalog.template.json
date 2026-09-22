@@ -1,0 +1,39 @@
+{
+  "artists": [
+    {
+      "id": "artist-slug",
+      "slug": "artist-slug",
+      "name": "Artist Name",
+      "genre": "Ambient / Electronic / Soundscapes",
+      "bio": "Short artist bio describing the project, sound, and aesthetic.",
+      "avatar": "/images/artists/artist-slug-avatar.svg",
+      "banner": "/images/artists/artist-slug-banner.svg",
+      "socials": {
+        "website": "https://example.com",
+        "spotify": "",
+        "bandcamp": ""
+      }
+    }
+  ],
+  "tracks": [
+    {
+      "id": "track-001",
+      "slug": "track-title-slug",
+      "title": "Track Title",
+      "artist": "Artist Name",
+      "artwork": "/images/covers/track-title-slug.svg",
+      "audioUrl": "https://example.com/audio/track-title-slug.mp3",
+      "description": "Track description shown on the file detail page.",
+      "duration": "4:12",
+      "releaseDate": "2026-01-01",
+      "audience": "General",
+      "tags": ["Ambient", "Synthwave", "Focus"],
+      "triggers": ["Blank", "Drop"],
+      "fileSize": "28.4 MB",
+      "bitrate": "24-bit / 96 kHz",
+      "bpm": "90 BPM",
+      "key": "F# Minor",
+      "format": "FLAC / Lossless"
+    }
+  ]
+}

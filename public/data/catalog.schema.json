@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hypno DB Catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["artists", "tracks"],
+  "properties": {
+    "artists": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artist"
+      }
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/track"
+      }
+    }
+  },
+  "$defs": {
+    "socials": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "website": { "type": "string" },
+        "spotify": { "type": "string" },
+        "bandcamp": { "type": "string" }
+      }
+    },
+    "artist": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "slug", "name", "genre", "bio", "avatar", "banner", "socials"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "slug": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "name": { "type": "string", "minLength": 1 },
+        "genre": { "type": "string", "minLength": 1 },
+        "bio": { "type": "string", "minLength": 1 },
+        "avatar": { "type": "string", "minLength": 1, "pattern": "^(?:/|https?:|data:)" },
+        "banner": { "type": "string", "minLength": 1, "pattern": "^(?:/|https?:|data:)" },
+        "socials": { "$ref": "#/$defs/socials" }
+      }
+    },
+    "track": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "slug", "title", "artist", "artwork", "audioUrl", "description", "duration", "releaseDate", "audience", "tags", "triggers", "fileSize", "bitrate", "bpm", "key", "format"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "slug": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "title": { "type": "string", "minLength": 1 },
+        "artist": { "type": "string", "minLength": 1 },
+        "artwork": { "type": "string", "minLength": 1, "pattern": "^(?:/|https?:|data:)" },
+        "audioUrl": { "type": "string", "minLength": 1, "pattern": "^(?:https?:|/|data:)" },
+        "description": { "type": "string", "minLength": 1 },
+        "duration": { "type": "string", "minLength": 1 },
+        "releaseDate": { "type": "string", "minLength": 1 },
+        "audience": { "type": "string", "minLength": 1 },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "triggers": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "fileSize": { "type": "string", "minLength": 1 },
+        "bitrate": { "type": "string", "minLength": 1 },
+        "bpm": { "type": "string", "minLength": 1 },
+        "key": { "type": "string", "minLength": 1 },
+        "format": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

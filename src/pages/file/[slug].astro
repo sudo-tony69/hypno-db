@@ -1,8 +1,11 @@
 ---
 // src/pages/file/[slug].astro
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import artistData from '../../../public/data/artist.json';
 import tracksData from '../../../public/data/tracks.json';
-import { slugify } from '../../utils/audio';
+import { normalizeArtists, resolveArtistSlug, slugify } from '../../utils/audio';
+
+const artists = normalizeArtists(artistData);
 
 export async function getStaticPaths() {
   return tracksData.map(track => ({
@@ -12,6 +15,7 @@ export async function getStaticPaths() {
 }
 
 const { track } = Astro.props;
+const artistSlug = resolveArtistSlug(track.artist, artists);
 ---
 
 <BaseLayout title={`${track.title} — File Details`}>
@@ -52,7 +56,7 @@ const { track } = Astro.props;
             <span style="font-family: monospace; font-size: 0.8rem; color: var(--accent-cyan); background: rgba(6, 182, 212, 0.1); padding: 3px 8px; border-radius: 4px;">ID #{track.id}</span>
             <h1 style="font-size: 2.4rem; font-weight: 800; margin-top: 0.5rem;">{track.title}</h1>
             <div style="font-size: 1.1rem; color: var(--accent-purple); font-weight: 600;">
-              Artist: <a href={`/artist/${track.artist}`} style="color: inherit; text-decoration: none;">{track.artist}</a>
+              Artist: <a href={`/artist/${artistSlug}`} style="color: inherit; text-decoration: none;">{track.artist}</a>
             </div>
           </div>
 
@@ -92,11 +96,14 @@ const { track } = Astro.props;
           <!-- Tags -->
           <div>
             <span style="font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; margin-right: 0.5rem;">Tags:</span>
-            {track.tags?.map(tag => (
-              <a href={`/tag/${tag}`} class="btn btn-secondary" style="padding: 0.2rem 0.6rem; font-size: 0.75rem; margin-right: 0.4rem; text-decoration: none;">
-                #{tag}
-              </a>
-            ))}
+            {track.tags?.map(tag => {
+              const tagSlug = slugify(tag);
+              return (
+                <a href={`/tag/${tagSlug}`} class="btn btn-secondary" style="padding: 0.2rem 0.6rem; font-size: 0.75rem; margin-right: 0.4rem; text-decoration: none;">
+                  #{tag}
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>

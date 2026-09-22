@@ -3,10 +3,12 @@
   "type": "module",
   "version": "0.2.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
+    "data:validate": "node scripts/validate-data.mjs",
+    "data:build": "npm run data:validate && node scripts/build-data.mjs",
+    "dev": "npm run data:build && astro dev --background",
+    "start": "npm run data:build && astro dev --background",
+    "build": "npm run data:build && astro build",
+    "preview": "npm run data:build && astro preview",
     "deploy": "./scripts/deploy.sh",
     "astro": "astro"
   },

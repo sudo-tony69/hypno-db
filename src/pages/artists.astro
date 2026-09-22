@@ -3,11 +3,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import artistData from '../../public/data/artist.json';
 import tracksData from '../../public/data/tracks.json';
+import { normalizeArtists } from '../utils/audio';
 
-// Consolidate artists (supports single object or array)
-const artists = Array.isArray(artistData) ? artistData : [artistData];
-
-const artistList = artists.map(art => {
+const artistList = normalizeArtists(artistData).map(art => {
   const tracks = tracksData.filter(t => t.artist === art.name);
   return { ...art, trackCount: tracks.length };
 });
@@ -31,7 +29,7 @@ const artistList = artists.map(art => {
             <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.25rem;">{artist.bio}</p>
             <div style="display: flex; justify-content: space-between; align-items: center;">
               <span style="font-size: 0.8rem; color: var(--text-dim);">{artist.trackCount} Master Files</span>
-              <a href={`/artist/${artist.name}`} class="btn btn-primary">View Artist Catalog →</a>
+              <a href={`/artist/${artist.slug}`} class="btn btn-primary">View Artist Catalog →</a>
             </div>
           </div>
         </div>

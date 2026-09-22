@@ -1,16 +1,9 @@
 ---
-// src/pages/tags.astro
+// src/pages/triggers.astro
 import BaseLayout from '../layouts/BaseLayout.astro';
-import tracksData from '../../public/data/tracks.json';
+import triggerData from '../../public/data/triggers.json';
 
-const triggerCounts: Record<string, number> = {};
-tracksData.forEach(track => {
-  track.triggers?.forEach(trigger => {
-    triggerCounts[trigger] = (triggerCounts[trigger] || 0) + 1;
-  });
-});
-
-const sortedTriggers = Object.entries(triggerCounts).sort((a, b) => b[1] - a[1]);
+const sortedTriggers = [...triggerData].sort((a, b) => b.count - a.count);
 ---
 
 <BaseLayout title="All Triggers">
@@ -19,15 +12,15 @@ const sortedTriggers = Object.entries(triggerCounts).sort((a, b) => b[1] - a[1])
     <p style="color: var(--text-muted); margin-bottom: 2rem;">Browse master audio files filtered by style, instrument, and genre classification.</p>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem;">
-      {sortedTriggers.map(([trigger, count]) => (
+      {sortedTriggers.map(trigger => (
         <a 
-          href={`/trigger/${trigger}`} 
+          href={`/trigger/${trigger.slug || trigger.name}`} 
           style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; text-decoration: none; color: inherit; display: flex; justify-content: space-between; align-items: center; transition: var(--transition-base);"
           class="tag-card"
         >
           <div>
-            <div style="font-weight: 700; font-size: 1.1rem; color: var(--accent-cyan);">#{trigger}</div>
-            <div style="font-size: 0.8rem; color: var(--text-dim);">{count} audio recording{count > 1 ? 's' : ''}</div>
+            <div style="font-weight: 700; font-size: 1.1rem; color: var(--accent-cyan);">#{trigger.name}</div>
+            <div style="font-size: 0.8rem; color: var(--text-dim);">{trigger.count} audio recording{trigger.count > 1 ? 's' : ''}</div>
           </div>
           <span>→</span>
         </a>

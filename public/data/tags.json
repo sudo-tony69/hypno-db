@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Ambient",
+    "slug": "ambient",
+    "count": 2
+  },
+  {
+    "name": "Arpeggio",
+    "slug": "arpeggio",
+    "count": 1
+  },
+  {
+    "name": "Chillout",
+    "slug": "chillout",
+    "count": 1
+  },
+  {
+    "name": "Cinematic",
+    "slug": "cinematic",
+    "count": 1
+  },
+  {
+    "name": "Demo",
+    "slug": "demo",
+    "count": 1
+  },
+  {
+    "name": "Drone",
+    "slug": "drone",
+    "count": 1
+  },
+  {
+    "name": "Experimental",
+    "slug": "experimental",
+    "count": 1
+  },
+  {
+    "name": "Focus",
+    "slug": "focus",
+    "count": 1
+  },
+  {
+    "name": "Instrumental",
+    "slug": "instrumental",
+    "count": 1
+  },
+  {
+    "name": "Live",
+    "slug": "live",
+    "count": 1
+  },
+  {
+    "name": "Mastered",
+    "slug": "mastered",
+    "count": 1
+  },
+  {
+    "name": "Modular",
+    "slug": "modular",
+    "count": 1
+  },
+  {
+    "name": "Synthwave",
+    "slug": "synthwave",
+    "count": 1
+  },
+  {
+    "name": "Tape Session",
+    "slug": "tape-session",
+    "count": 1
+  },
+  {
+    "name": "Unreleased",
+    "slug": "unreleased",
+    "count": 1
+  }
+]

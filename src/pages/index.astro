@@ -3,10 +3,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import tracksData from '../../public/data/tracks.json';
 import artistData from '../../public/data/artist.json';
-import { slugify } from '../utils/audio';
+import { normalizeArtists, normalizeTracks, resolveArtistSlug, slugify } from '../utils/audio';
 
-const recentTracks = [...tracksData].slice(0, 6);
-const allTags = Array.from(new Set(tracksData.flatMap(t => t.tags || [])));
+const artists = normalizeArtists(artistData);
+const tracks = normalizeTracks(tracksData);
+const featuredArtist = artists[0] ?? { name: 'Aetheria', slug: 'aetheria' };
+const recentTracks = [...tracks].slice(0, 6);
+const allTags = Array.from(new Set(tracks.flatMap(t => t.tags || [])));
 ---
 
 <BaseLayout title="Home — Studio Audio Hub">
@@ -18,8 +21,8 @@ const allTags = Array.from(new Set(tracksData.flatMap(t => t.tags || [])));
         Browse master-quality audio stems, experimental synth recordings, artist profiles, and genre tags.
       </p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="/files" class="btn btn-primary">Browse All Files ({tracksData.length})</a>
-        <a href={`/artist/${artistData.name}`} class="btn btn-secondary">Featured Artist: {artistData.name}</a>
+        <a href="/files" class="btn btn-primary">Browse All Files ({tracks.length})</a>
+        <a href={`/artist/${featuredArtist.slug}`} class="btn btn-secondary">Featured Artist: {featuredArtist.name}</a>
         <a href="/tags" class="btn btn-secondary">Explore Tags</a>
       </div>
     </section>
@@ -54,7 +57,7 @@ const allTags = Array.from(new Set(tracksData.flatMap(t => t.tags || [])));
                 <h3 style="font-size: 1rem; font-weight: 700;">
                   <a href={`/file/${trackSlug}`} style="color: inherit; text-decoration: none;">{track.title}</a>
                 </h3>
-                <a href={`/artist/${track.artist}`} style="font-size: 0.8rem; color: var(--accent-purple); text-decoration: none;">
+                <a href={`/artist/${resolveArtistSlug(track.artist, artists)}`} style="font-size: 0.8rem; color: var(--accent-purple); text-decoration: none;">
                   By {track.artist}
                 </a>
               </div>

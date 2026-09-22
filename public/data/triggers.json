@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Blank",
+    "slug": "blank",
+    "count": 1
+  },
+  {
+    "name": "Drop",
+    "slug": "drop",
+    "count": 1
+  },
+  {
+    "name": "Empty",
+    "slug": "empty",
+    "count": 1
+  },
+  {
+    "name": "Sleep",
+    "slug": "sleep",
+    "count": 1
+  }
+]

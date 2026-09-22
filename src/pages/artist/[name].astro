@@ -3,12 +3,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import artistData from '../../../public/data/artist.json';
 import tracksData from '../../../public/data/tracks.json';
-import { slugify } from '../../utils/audio';
+import { normalizeArtists, slugify } from '../../utils/audio';
 
 export async function getStaticPaths() {
-  const artists = Array.isArray(artistData) ? artistData : [artistData];
+  const artists = normalizeArtists(artistData);
   return artists.map(artist => ({
-    params: { name: artist.name },
+    params: { name: artist.slug },
     props: { artist }
   }));
 }
